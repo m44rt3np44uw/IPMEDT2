@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Opdracht 2 - Rekenmachine</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div id="som" ondrop="drop(event)" ondragover="allow_drop(event)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="1" class="number_circle" draggable="true" ondragstart="drag(event)">1</div>
+                </td>
+                <td>
+                    <div id="2" class="number_circle" draggable="true" ondragstart="drag(event)">2</div>
+                </td>
+                <td>
+                    <div id="3" class="number_circle" draggable="true" ondragstart="drag(event)">3</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="4" class="number_circle" draggable="true" ondragstart="drag(event)">4</div>
+                </td>
+                <td>
+                    <div id="5" class="number_circle" draggable="true" ondragstart="drag(event)">5</div>
+                </td>
+                <td>
+                    <div id="6" class="number_circle" draggable="true" ondragstart="drag(event)">6</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="7" class="number_circle" draggable="true" ondragstart="drag(event)">7</div>
+                </td>
+                <td>
+                    <div id="8" class="number_circle" draggable="true" ondragstart="drag(event)">8</div>
+                </td>
+                <td>
+                    <div id="9" class="number_circle" draggable="true" ondragstart="drag(event)">9</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="0" class="number_circle" draggable="true" ondragstart="drag(event)">0</div>
+                </td>
+                <td>
+                    <div id="+" class="number_circle" draggable="true" ondragstart="drag(event)">+</div>
+                </td>
+                <td>
+                    <div id="-" class="number_circle" draggable="true" ondragstart="drag(event)">-</div>
+                </td>
+            </tr>
+        </table>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
