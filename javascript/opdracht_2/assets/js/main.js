@@ -43,8 +43,12 @@ function drop(e)
     // Controleer of er geen 3 elementen al gesleept zijn.
     if (som.length < 3)
     {
+        // Controleer of het 1e gesleepte element geen + of - is.
         // Controleer of het 2e gesleepte element geen nummer is.
+        // Controleer of het 3e gesleepte element geen + of - is.
+        if(som.length == 0 &&  isNaN(data)) { return; }
         if(som.length == 1 && !isNaN(data)) { return; }
+        if(som.length == 2 &&  isNaN(data)) { return; }
 
         // Voeg het element toe.
         document.getElementById('som').appendChild(document.getElementById(data));
