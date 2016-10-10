@@ -23,7 +23,7 @@ function allow_drop(e)
 function berekening()
 {
     // Resultaat berekenen.
-    var result = (''+eval(som.join(" ")).toFixed(2)).split(''),
+    var result = (''+eval(som.join(" ")).toFixed(6)).split('').slice(0, 8),
         html   = '';
 
     console.log(result);
