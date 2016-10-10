@@ -1,6 +1,10 @@
 // Array wordt in de code gevuld met nummers, + of -.
 var som = [];
 
+// setTimeout(function(){
+//     window.location.reload(1);
+// }, 1000);
+
 // Drag functie.
 function drag(e)
 {
@@ -19,12 +23,14 @@ function allow_drop(e)
 function berekening()
 {
     // Resultaat berekenen.
-    var result = (''+eval(som.join(" "))).split(''),
+    var result = (''+eval(som.join(" ")).toFixed(2)).split(''),
         html   = '';
+
+    console.log(result);
 
     // Maak de HTML elementen.
     result.forEach(function(number) {
-        html = html + '<div class="number_circle">' + number + '</div>';
+        html = html + '<div class="number">' + number + '</div>';
     });
 
     // Vul het vak met nummers.
