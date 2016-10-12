@@ -1,11 +1,12 @@
 {
-  "name": "javascript",
+  "name": "opdracht-1",
   "homepage": "https://github.com/m44rt3np44uw/IMTD1",
   "authors": [
-    "Maarten Paauw <maartenpaauw@gmail.com>"
+    "Maarten Paauw <maartenpaauw@gmail.com>",
+    "Maarten Paauw <s1094220@student.hsleiden.nl>"
   ],
-  "description": "",
-  "main": "",
+  "description": "Opdracht 1 voor het vak IPMEDT2 (Project Mediatechnologie 2) op Hogeschool Leiden.",
+  "main": "index.html",
   "license": "MIT",
   "ignore": [
     "**/.*",
