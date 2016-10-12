@@ -1,1 +1,0 @@
-<?php header('Location: ' . 'https://docs.google.com/presentation/d/1S2hyiL-Y36q17cRAjjQgDzylStYYGOnkmdAvSFc4Y7c/pub?start=false&loop=false&delayms=20000&slide=id.g1186acfbaf_0_0');

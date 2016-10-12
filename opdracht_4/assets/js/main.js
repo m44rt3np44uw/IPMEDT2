@@ -5,7 +5,6 @@ $(document).ready(function () {
         $window = $(window),
         $body   = $('body');
 
-
     $box.hover(function () {
         $(this).toggleClass('hover');
         $body.toggleClass('background-hover');

@@ -1,8 +1,12 @@
 body {
-    background-color: #658795;
+    background-color: crimson;
     margin: 0;
     padding: 0;
     transition: all 1s;
+}
+
+body.background-hover {
+    background-color: #fff;
 }
 
 #fullpage {
@@ -14,8 +18,9 @@ body {
     height: 200px;
     display: block;
     background-color: white;
-    position: absolute;
+    border-radius: 15px;
     transition: all 1s;
+    position: absolute;
 }
 
 #box.hover {
@@ -27,6 +32,3 @@ body {
     border-radius: 300px;
 }
 
-.background-hover {
-    background-color: #fff;
-}
