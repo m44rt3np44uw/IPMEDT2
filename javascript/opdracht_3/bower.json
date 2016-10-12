@@ -1,0 +1,17 @@
+{
+  "name": "opdracht_3",
+  "homepage": "https://github.com/m44rt3np44uw/IMTD1",
+  "authors": [
+    "Maarten Paauw <maartenpaauw@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
