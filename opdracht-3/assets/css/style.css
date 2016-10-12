@@ -1,3 +1,50 @@
-a {
+html {
+    background-color: lightcyan;
+    font-family: Sans-Serif;
+    padding-top: 100px;
+}
+
+#antwoord a {
     text-decoration: none;
+    background-color: #00b3ee;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    overflow: hidden;
+    border: solid thin #00b3ee;
+}
+
+#antwoord a:hover {
+    background-color: #1a9ee1;
+    border: solid thin #2aabd2;
+}
+
+#antwoord li {
+    list-style:  none;
+    display: inline-block;
+}
+
+#antwoord li:first-of-type {
+    margin-right: 20px;
+}
+
+#antwoord li:not(:first-of-type) {
+    margin-top: 30px;
+}
+
+.wrapper {
+    background-color: white;
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+p#verhaal {
+    font-weight: bold;
+    margin-bottom: 25px;
 }
