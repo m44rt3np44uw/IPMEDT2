@@ -67,14 +67,14 @@ body {
 
 .tweet .tweet-header {
     margin: -50px -50px 50px;
-    background-color: #FF7F66;
+    background-color: #2185C5;
 }
 
 .tweet .tweet-header img.image, .tweet .tweet-header video.video {
     width:100%;
     filter: grayscale(100%);
     display: block;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .tweet .tweet-header img.image:hover, .tweet .tweet-header video.video:hover {
