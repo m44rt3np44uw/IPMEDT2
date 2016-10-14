@@ -8,10 +8,9 @@ $(document).ready(function () {
 
 function vertel(stap)
 {
-    var $image    = $('img'),
-        $verhaal  = $('#verhaal'),
-        $antwoord = $('#antwoord'),
-
+    var $image      = $('img'),
+        $verhaal    = $('#verhaal'),
+        $antwoord   = $('#antwoord'),
         verhaallijn = {
             verhaal_1: {
                 vraag: 'Hallo, zou ik jou eens een verhaaltje vertellen?',
@@ -61,7 +60,6 @@ function vertel(stap)
                 vraag: 'OKE DOEI!'
             }
         },
-
         verhaalstuk = verhaallijn['verhaal_' + stap]
     ;
 

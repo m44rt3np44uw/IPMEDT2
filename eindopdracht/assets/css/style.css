@@ -1,0 +1,148 @@
+/* https://color.adobe.com/nl/Salmon-on-Ice-color-theme-2291686/ */
+
+* {
+    transition: all 200ms;
+}
+
+body {
+    font-family: Sans-Serif;
+    background-color: #FFF6E5;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#header {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: #7ECEFD;
+    margin-bottom: 75px;
+}
+
+#header h1, #header h2, #header h2 a.hashtag {
+    text-align: center;
+    color: #ffffff;
+}
+
+#header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#header h2 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+#header h2 .hashtag {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#header h2 .hashtag:hover {
+    color: #2185C5;
+    padding-bottom: 5px;
+    border-bottom: solid 4px;
+}
+
+.tweet {
+    background-color: white;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.tweet:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+.tweet .tweet-header, .tweet .tweet-header img.image, .tweet .tweet-header video.video {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tweet .tweet-header {
+    margin: -50px -50px 50px;
+    background-color: #FF7F66;
+}
+
+.tweet .tweet-header img.image, .tweet .tweet-header video.video {
+    width:100%;
+    filter: grayscale(100%);
+    display: block;
+    opacity: 0.3;
+}
+
+.tweet .tweet-header img.image:hover, .tweet .tweet-header video.video:hover {
+    opacity: 1;
+    filter: none;
+}
+
+.tweet .tweet-content p {
+    color: #3E454C;
+    line-height: 175%;
+    text-align: justify;
+}
+
+.tweet .tweet-content p:last-of-type {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.tweet .tweet-content p a {
+    color: #FF7F66;
+    text-decoration: none;
+}
+
+.tweet .tweet-content p a:hover {
+    padding-bottom: 3px;
+    border-bottom: solid 2px;
+}
+
+#footer {
+    background-color: #3E454C;
+    margin-top: 75px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#footer h6, #footer p {
+    text-align: center;
+    color: #FFF6E5;
+}
+
+#footer h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#footer p {
+    font-size: 10px;
+    font-weight: 200;
+    padding-top: 10px;
+}
+
+#footer p sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+#footer p a {
+    text-decoration: none;
+    color: #FFF6E5;
+    font-weight: 700;
+}
+
+#footer p a:hover {
+    padding-bottom: 5px;
+    border-bottom: solid 2px;
+}
+
+#footer p:last-of-type {
+    padding-top: 30px;
+}

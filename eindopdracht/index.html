@@ -9,11 +9,67 @@
     </head>
 
     <body>
-        <section class="container">
+        <header id="header">
+            <div class="container">
+                <div class="rij">
+                    <div class="kolom">
+                        <h1>Tweets</h1>
+                        <h2>Met de hashtag <a href="#" class="hashtag"></a></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <section>
+            <div class="container">
+                <div class="rij">
+                    <div class="kolom">
+                        <div class="tweet">
+                            <div class="tweet-header">
+                                <img class="image" src="assets/img/kat.jpeg" alt="Kat">
+                            </div>
+                            <div class="tweet-content">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis <a href="#" class="hashtag"></a>.</p>
+                                <p>20:43 - 14 okt. 2016 door <a href="">@maartenpaauw</a></p>
+                            </div>
+                        </div>
+                        <div class="tweet">
+                            <div class="tweet-content">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis <a href="#" class="hashtag"></a>.</p>
+                                <p>20:43 - 14 okt. 2016 door <a href="">@maartenpaauw</a></p>
+                            </div>
+                        </div>
+                        <div class="tweet">
+                            <div class="tweet-header">
+                                <video class="video" controls="controls">
+                                    <source src="assets/vid/konijn.mp4" />
+                                    <source src="assets/vid/konijn.ogg" />
+                                </video>
+                            </div>
+                            <div class="tweet-content">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis <a href="#" class="hashtag"></a>.</p>
+                                <p>20:43 - 14 okt. 2016 door <a href="">@maartenpaauw</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="assets/js/main.js"></script>
+        <footer id="footer">
+            <div class="container">
+                <div class="rij">
+                    <div class="kolom">
+                        <h6>Gemaakt door Maarten Paauw</h6>
+                        <p>2<sup>e</sup> jaars student aan <a href="http://www.hsleiden.nl/">Hogeschool Leiden</a></p>
+                        <p>2016 - 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.tweets.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
     </body>
 </html>
