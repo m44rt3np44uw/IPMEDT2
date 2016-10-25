@@ -1,7 +1,7 @@
 /* https://color.adobe.com/nl/Salmon-on-Ice-color-theme-2291686/ */
 
 * {
-    transition: all 200ms;
+    transition: all 1000ms;
 }
 
 body {
@@ -23,7 +23,9 @@ body {
     margin-bottom: 75px;
 }
 
-#header h1, #header h2, #header h2 a.hashtag {
+#header h1,
+#header h2,
+#header h2 a.hashtag {
     text-align: center;
     color: #ffffff;
 }
@@ -60,26 +62,34 @@ body {
     margin-top: 20px;
 }
 
-.tweet .tweet-header, .tweet .tweet-header img.image, .tweet .tweet-header video.video {
+.tweet .tweet-header,
+.tweet .tweet-header img.image,
+.tweet .tweet-header video.video {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .tweet .tweet-header {
-    margin: -50px -50px 50px;
+    margin: -50px -50px 50px -55px;
     background-color: #2185C5;
 }
 
-.tweet .tweet-header img.image, .tweet .tweet-header video.video {
+.tweet .tweet-header img.image,
+.tweet .tweet-header video.video {
     width:100%;
-    filter: grayscale(100%);
     display: block;
     opacity: 0.5;
+    filter: grayscale(100%);
 }
 
-.tweet:hover .tweet-header img.image, .tweet:hover .tweet-header video.video {
-    opacity: 1;
+.tweet:hover .tweet-header img.image,
+.tweet:hover .tweet-header video.video {
+    opacity: 1.0;
     filter: none;
+}
+
+.tweet {
+    border-left: solid 5px #FF7F66;
 }
 
 .tweet .tweet-content p {
