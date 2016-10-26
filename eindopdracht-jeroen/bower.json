@@ -1,0 +1,22 @@
+{
+  "name": "eindopdracht-jeroen",
+  "homepage": "https://github.com/m44rt3np44uw/IMTD1",
+  "authors": [
+    "Maarten Paauw <maartenpaauw@gmail.com>",
+    "Maarten Paauw <s1094220@student.hsleiden.nl>"
+  ],
+  "description": "Eindopdracht voor het vak IPMEDT2 (Project Mediatechnologie 2) op Hogeschool Leiden.",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "reset-css": "^2.2.0"
+  }
+}
