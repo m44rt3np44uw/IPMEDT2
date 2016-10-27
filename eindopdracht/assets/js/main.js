@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    // Moment
+    moment.locale('nl');
+
     // The hashtag.
     var hashtag = 'catsoftwitter';
 

@@ -112,8 +112,8 @@
                 // Add the Tweet text div.
                 template += '<p class="tweet-text">' + parse_url(status)   + '</p>';
 
-                // Make the Tweet by div.
-                template += '<p class="tweet-by">' + new Date(status.created_at) + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
+                // Make the Tweet by div. new Date(status.created_at)
+                template += '<p class="tweet-by">' + moment(status.created_at).format("hh:mm &#8211; ll") + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
 
             // Close the div content div.
             template += '</div>';
