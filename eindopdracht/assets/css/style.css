@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Sans-Serif;
+    font-family: Helvetica, Arial, Sans-Serif;
     background-color: #FFF6E5;
 }
 
@@ -142,15 +142,24 @@ body {
     font-size: smaller;
 }
 
+#footer h6 a,
 #footer p a {
     text-decoration: none;
     color: #FFF6E5;
     font-weight: 700;
 }
 
+#footer h6 a:hover,
+#footer p a:hover {
+    border-bottom: solid 2px;
+}
+
+#footer h6 a:hover {
+    padding-bottom: 2px;
+}
+
 #footer p a:hover {
     padding-bottom: 5px;
-    border-bottom: solid 2px;
 }
 
 #footer p:last-of-type {
