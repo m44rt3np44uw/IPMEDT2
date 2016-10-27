@@ -18,11 +18,23 @@ $settings = array(
     'consumer_secret'           => getenv("CONSUMER_SECRET")
 );
 
+// Get the type.
+$type = $_GET['type'];
+
+// Get the id.
+$id = $_GET['id'];
+
+if($type == "since_id") {
+    $id++;
+} else {
+    $id--;
+}
+
 $fields = array(
     'q'           => '#' . $_GET['hashtag'],
     'count'       => 10,
     'result_type' => 'recent',
-    'max_id'      => ($_GET['max_id'] - 1)
+    $_GET['type'] => $id
 );
 
 // URL settings.

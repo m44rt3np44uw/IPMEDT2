@@ -6,6 +6,9 @@ $(document).ready(function () {
     // The hashtag.
     var hashtag = 'catsoftwitter';
 
+    // Add the hashtag to the title.
+    $('title').append(' - #' + hashtag);
+
     // Create the hashtag
     $('.hashtag').hashtag(hashtag);
 
@@ -15,13 +18,17 @@ $(document).ready(function () {
     $button.hide();
 
     // Get tweets the first time.
-    getTweets(0);
+    getTweets('max_id', 0, true);
 
     // Show button.
     function showButton() {
 
-        // Show button.
-        $button.show();
+        // Check if the button is visible.
+        if(!$button.is(":visible")) {
+
+            // Show button.
+            $button.show();
+        }
     }
 
     // Load more tweets.
@@ -34,27 +41,59 @@ $(document).ready(function () {
         var max_id = $oldest_tweet.attr('data-id');
 
         // Get new Tweets.
-        getTweets(max_id);
+        getTweets('max_id', max_id, true);
     });
 
-    function getTweets(max_id) {
+    // Get new tweets each 30 seconds.
+    setInterval(function() {
+
+        // Get the first tweet and the id.
+        var $newest_tweet = $('.tweet').first(),
+            since_id      = $newest_tweet.attr('data-id');
+
+        // Get new tweets.
+        getTweets('since_id', since_id, false);
+
+    }, 30000);
+
+    function getTweets(type, id, append) {
+
+        // Data
+        var data = {
+            'hashtag': hashtag,
+            'type': type,
+            'id': id
+        };
 
         // Make a request.
         $.ajax({
             'url': 'twitter.php',
             'method': 'GET',
-            'data': {'hashtag' : hashtag, 'max_id': max_id},
+            'data': data,
             'dataType': 'json',
             'success': function (data) {
 
                 // Show button after the first tweets are loaded.
                 showButton();
 
+                // Store the statuses.
+                var statuses = data.statuses;
+
+                // Filter the tweets.
+                statuses = statuses.filter(function (status) {
+                    return status.id != id;
+                });
+
+                // Reverse the array if we need to prepend it.
+                if(!append) {
+                    statuses = statuses.reverse();
+                }
+
                 // Loop through each status.
-                $.each(data.statuses, function (index, status) {
+                $.each(statuses, function (index, status) {
 
                     // Make tweet
-                    $('.tweets').makeTweet(status);
+                    $('.tweets').makeTweet(status, append);
                 });
 
                 // Make Tweet colorful.

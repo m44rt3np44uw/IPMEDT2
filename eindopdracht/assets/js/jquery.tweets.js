@@ -22,7 +22,7 @@
     };
 
     // Make tweet
-    $.fn.makeTweet = function (status) {
+    $.fn.makeTweet = function (status, append) {
 
         // Replace urls and hashtags.
         function parse_url(status) {
@@ -110,10 +110,10 @@
             template += '<div class="tweet-content">';
 
                 // Add the Tweet text div.
-                template += '<p class="tweet-text">' + parse_url(status)   + '</p>';
+                template += '<p class="tweet-text">' + parse_url(status) + '</p>';
 
                 // Make the Tweet by div.
-                template += '<p class="tweet-by">' + moment(new Date(status.created_at)).format("hh:mm &#8211; ll") + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
+                template += '<p class="tweet-by">' + moment(new Date(status.created_at)).format("LLL") + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
 
             // Close the div content div.
             template += '</div>';
@@ -121,8 +121,13 @@
         // Close the tweet div.
         template += '</div>';
 
-        // Add the tweet to the page.
-        $(this).append($(template).hide().fadeIn(500));
+
+        // Append the tweet to the page.
+        if(append) {
+            $(this).append($(template).hide().fadeIn(500));
+        } else {
+            $(this).prepend($(template).hide().fadeIn(500));
+        }
     };
 
     // Make colorful
