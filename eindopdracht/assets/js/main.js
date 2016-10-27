@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         // Make a request.
         $.ajax({
-            'url': '/twitter.php',
+            'url': 'twitter.php',
             'method': 'GET',
             'data': {'hashtag' : hashtag, 'max_id': max_id},
             'dataType': 'json',
