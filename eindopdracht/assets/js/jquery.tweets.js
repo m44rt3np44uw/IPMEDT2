@@ -121,7 +121,8 @@
         // Close the tweet div.
         template += '</div>';
 
-        $(this).append(template);
+        // Add the tweet to the page.
+        $(this).append($(template).hide().fadeIn(500));
     };
 
     // Make colorful
