@@ -18,8 +18,15 @@ $settings = array(
     'consumer_secret'           => getenv("CONSUMER_SECRET")
 );
 
+$fields = array(
+    'q'           => '#' . $_GET['hashtag'],
+    'count'       => 10,
+    'result_type' => 'recent',
+    'max_id'      => ($_GET['max_id'] - 1)
+);
+
 // URL settings.
-$getField = '?q=%23' . $_GET['hashtag'];
+$getField = http_build_query($fields);
 $url = 'https://api.twitter.com/1.1/search/tweets.json';
 $requestMethod = 'GET';
 
