@@ -10,8 +10,8 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
+    width: 50%;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .tweet:not(:first-of-type) {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .tweet .tweet-header,
@@ -95,7 +95,7 @@ body {
 .tweet .tweet-content p {
     color: #3E454C;
     line-height: 175%;
-    text-align: justify;
+    text-align: left;
 }
 
 .tweet .tweet-content p:last-of-type {
