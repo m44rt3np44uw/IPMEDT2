@@ -195,3 +195,11 @@ body {
 #footer p:last-of-type {
     padding-top: 30px;
 }
+
+@media screen and (orientation:portrait) {
+    .container {
+        width: 85%;
+        max-width: 85%;
+        min-width: 85%;
+    }
+}

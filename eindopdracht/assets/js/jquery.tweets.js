@@ -38,20 +38,20 @@
             });
 
             // Make each hashtag clickable.
-            text = text.replace(/(^|\s)(#[a-z\d-]+)/ig, function (hashtag) {
+            text = text.replace(/#([\w]{1,})/g, function (hashtag) {
 
                 // Replace the space with the hashtag.
-                var no_space = hashtag.replace(" #", "");
+                var no_space = hashtag.replace("#", "");
 
                 // Return the replaced text.
                 return '<a target="_blank" href="https://twitter.com/hashtag/' + no_space + '?src=hash">' + hashtag + '</a>';
             });
 
             // Make each mention clickable.
-            text = text.replace(/(^|\s)(@[a-z\d-]+)/ig, function(mention) {
+            text = text.replace(/@([\w]{1,})/g, function(mention) {
 
                 // Replace the space with the mention.
-                var no_space = mention.replace(" @", "");
+                var no_space = mention.replace("@", "");
 
                 // Return the replaced text.
                 return '<a target="_blank" href="https://twitter.com/' + no_space + '">' + mention + '</a>';
