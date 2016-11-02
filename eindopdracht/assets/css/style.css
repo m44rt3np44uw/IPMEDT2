@@ -12,7 +12,6 @@ body {
 .container {
     width: 50%;
     max-width: 600px;
-    min-width: 400px;
     margin: 0 auto;
 }
 
@@ -24,9 +23,14 @@ body {
     margin-bottom: 75px;
 }
 
+#header .container {
+    width: 75%;
+}
+
 #header h1,
 #header h2,
-#header h2 a.hashtag {
+#header h2 a.hashtag,
+#header p {
     text-align: center;
     color: #ffffff;
 }
@@ -37,7 +41,7 @@ body {
 }
 
 #header h2 {
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 1.5rem;
     font-weight: 200;
 }
@@ -51,6 +55,31 @@ body {
     color: #2185C5;
     padding-bottom: 5px;
     border-bottom: solid 4px;
+}
+
+#header p {
+    line-height: 200%;
+    font-size: 0.85rem;
+}
+
+#header p:first-of-type {
+    margin-top: 75px;
+}
+
+#header p:last-of-type {
+    margin-top: 25px;
+}
+
+#header p a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+#header p a:hover {
+    color: #2185C5;
+    padding-bottom: 5px;
+    border-bottom: solid 2px;
 }
 
 .tweet {
@@ -125,7 +154,6 @@ body {
     margin-top: 75px;
     text-align: center;
 }
-
 .more button {
     width: 75px;
     height: 75px;
@@ -192,14 +220,10 @@ body {
     padding-bottom: 5px;
 }
 
-#footer p:last-of-type {
+#footer p:nth-child(3) {
     padding-top: 30px;
 }
 
-@media screen and (orientation:portrait) {
-    .container {
-        width: 85%;
-        max-width: 85%;
-        min-width: 85%;
-    }
+#footer p:last-of-type {
+    padding-top: 20px;
 }

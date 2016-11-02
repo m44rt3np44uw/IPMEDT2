@@ -3,8 +3,16 @@ $(document).ready(function () {
     // Moment
     moment.locale('nl');
 
+
+    // The hashtags
+    var hashtags = [
+        'desuperfreekshow',
+        'superfreekshow',
+        'superfreek'
+    ];
+
     // The hashtag.
-    var hashtag = 'catsoftwitter';
+    var hashtag = hashtags[0];
 
     // Add the hashtag to the title.
     $('title').append(' - #' + hashtag);
@@ -58,9 +66,13 @@ $(document).ready(function () {
 
     function getTweets(type, id, append) {
 
+        var q = hashtags.map(function(hashtag) {
+            return '#' + hashtag;
+        }).join("+OR+");
+
         // Data
         var data = {
-            'hashtag': hashtag,
+            'hashtag': q,
             'type': type,
             'id': id
         };
