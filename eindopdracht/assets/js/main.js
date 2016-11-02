@@ -3,16 +3,19 @@ $(document).ready(function () {
     // Moment
     moment.locale('nl');
 
-
     // The hashtags
     var hashtags = [
         'desuperfreekshow',
         'superfreekshow',
-        'superfreek'
+        'superfreek',
+        'freekvonk'
     ];
 
     // The hashtag.
     var hashtag = hashtags[0];
+
+    // Call finished
+    var call_finished = true;
 
     // Add the hashtag to the title.
     $('title').append(' - #' + hashtag);
@@ -20,13 +23,27 @@ $(document).ready(function () {
     // Create the hashtag
     $('.hashtag').hashtag(hashtag);
 
-    var $button = $('.more button');
+    var $button = $('.more button'),
+        $window = $(window);
 
     // Hide button for the first time.
     $button.hide();
 
     // Get tweets the first time.
     getTweets('max_id', 0, true);
+
+    // Button click function.
+    function buttonClick() {
+
+        // Get the oldest tweet.
+        var $oldest_tweet = $('.tweet').last();
+
+        // Get the id.
+        var max_id = $oldest_tweet.attr('data-id');
+
+        // Get new Tweets.
+        getTweets('max_id', max_id, true);
+    }
 
     // Show button.
     function showButton() {
@@ -39,17 +56,23 @@ $(document).ready(function () {
         }
     }
 
+    // If button is on screen.
+    $window.on('scroll', function() {
+
+        // Check if the button is visible and the call is finished.
+        if($button.visible() && call_finished) {
+
+            // Set call finished to false.
+            call_finished = false;
+
+            // Do a button click.
+            buttonClick();
+        }
+    });
+
     // Load more tweets.
     $button.on('click', function () {
-
-        // Get the oldest tweet.
-        var $oldest_tweet = $('.tweet').last();
-
-        // Get the id.
-        var max_id = $oldest_tweet.attr('data-id');
-
-        // Get new Tweets.
-        getTweets('max_id', max_id, true);
+        buttonClick();
     });
 
     // Get new tweets each 30 seconds.
@@ -64,8 +87,10 @@ $(document).ready(function () {
 
     }, 30000);
 
+    // Get the tweets.
     function getTweets(type, id, append) {
 
+        // Prepare the query.
         var q = hashtags.map(function(hashtag) {
             return '#' + hashtag;
         }).join("+OR+");
@@ -110,6 +135,9 @@ $(document).ready(function () {
 
                 // Make Tweet colorful.
                 $('body').makeColorful($('.tweet'));
+
+                // Finish the call.
+                call_finished = true;
             }
         });
     }
