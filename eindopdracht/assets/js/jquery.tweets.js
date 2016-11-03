@@ -1,4 +1,4 @@
-(function ( $ ) {
+(function ($) {
 
     // Fill the selector with the given hashtag.
     $.fn.hashtag = function (hashtag) {
@@ -6,7 +6,7 @@
         // Prefix the hashtag.
         $(this)
 
-            // Add the inner HTML.
+        // Add the inner HTML.
             .html('#' + hashtag)
 
             // Add some attributes.
@@ -48,7 +48,7 @@
             });
 
             // Make each mention clickable.
-            text = text.replace(/@([\w]{1,})/g, function(mention) {
+            text = text.replace(/@([\w]{1,})/g, function (mention) {
 
                 // Replace the space with the mention.
                 var no_space = mention.replace("@", "");
@@ -68,26 +68,26 @@
         template += '<div class="tweet" data-color="#' + status.user.profile_link_color + '" data-id="' + status.id + '">';
 
         // Check id there is any media.
-        if(status.extended_entities != undefined) {
+        if (status.extended_entities != undefined) {
 
             // Add the tweet header div.
             template += '<div class="tweet-header">';
 
             // Check if the media is a photo.
-            if(status.extended_entities.media[0].type == 'photo') {
+            if (status.extended_entities.media[0].type == 'photo') {
 
                 // Add the photo.
                 template += '<img class="image" src="' + status.extended_entities.media[0].media_url_https + '" alt="' + status.text + '" title="' + status.text + '">';
             }
 
             // Check if the media is a video.
-            else if(status.extended_entities.media[0].type == 'video') {
+            else if (status.extended_entities.media[0].type == 'video') {
 
                 // Get all the videos.
                 var videos = status.extended_entities.media[0].video_info.variants;
 
                 // Get only the mp4 videos.
-                var filtered = videos.filter(function(video) {
+                var filtered = videos.filter(function (video) {
 
                     // Check if the content type is a mp4.
                     return video.content_type == "video/mp4";
@@ -98,7 +98,7 @@
 
                 // Make the video HTML.
                 template += '<video class="video" controls>';
-                    template += '<source src="' + video + '" />';
+                template += '<source src="' + video + '" />';
                 template += '</video>';
             }
 
@@ -106,24 +106,24 @@
             template += '</div>';
         }
 
-            // Make the Tweet content div.
-            template += '<div class="tweet-content">';
+        // Make the Tweet content div.
+        template += '<div class="tweet-content">';
 
-                // Add the Tweet text div.
-                template += '<p class="tweet-text">' + parse_url(status) + '</p>';
+        // Add the Tweet text div.
+        template += '<p class="tweet-text">' + parse_url(status) + '</p>';
 
-                // Make the Tweet by div.
-                template += '<p class="tweet-by">' + moment(new Date(status.created_at)).format("LLL") + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
+        // Make the Tweet by div.
+        template += '<p class="tweet-by">' + moment(new Date(status.created_at)).format("LLL") + ' door <a href="https://www.twitter.com/' + status.user.screen_name + '" title="' + status.user.name + '" target="_blank">@' + status.user.screen_name + '</a></p>';
 
-            // Close the div content div.
-            template += '</div>';
+        // Close the div content div.
+        template += '</div>';
 
         // Close the tweet div.
         template += '</div>';
 
 
         // Append the tweet to the page.
-        if(append) {
+        if (append) {
             $(this).append($(template).hide().fadeIn(500));
         } else {
             $(this).prepend($(template).hide().fadeIn(500));
@@ -131,7 +131,7 @@
     };
 
     // Make colorful
-    $.fn.makeColorful =function ($tweets) {
+    $.fn.makeColorful = function ($tweets) {
 
         // Loop through each tweet.
         $.each($tweets, function (index, tweet) {
@@ -162,4 +162,4 @@
         });
     }
 
-}( jQuery ));
+}(jQuery));

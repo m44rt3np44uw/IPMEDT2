@@ -48,7 +48,7 @@ $(document).ready(function () {
     function showButton() {
 
         // Check if the button is visible.
-        if(!$button.is(":visible")) {
+        if (!$button.is(":visible")) {
 
             // Show button.
             $button.show();
@@ -56,10 +56,10 @@ $(document).ready(function () {
     }
 
     // If button is on screen.
-    $window.on('scroll', function() {
+    $window.on('scroll', function () {
 
         // Check if the button is visible and the call is finished.
-        if($button.visible() && call_finished) {
+        if ($button.visible() && call_finished) {
 
             // Set call finished to false.
             call_finished = false;
@@ -75,11 +75,11 @@ $(document).ready(function () {
     });
 
     // Get new tweets each 30 seconds.
-    setInterval(function() {
+    setInterval(function () {
 
         // Get the first tweet and the id.
         var $newest_tweet = $('.tweet').first(),
-            since_id      = $newest_tweet.attr('data-id');
+            since_id = $newest_tweet.attr('data-id');
 
         // Get new tweets.
         getTweets('since_id', since_id, false);
@@ -90,7 +90,7 @@ $(document).ready(function () {
     function getTweets(type, id, append) {
 
         // Prepare the query.
-        var q = hashtags.map(function(hashtag) {
+        var q = hashtags.map(function (hashtag) {
             return '#' + hashtag;
         }).join("+OR+");
 
@@ -121,7 +121,7 @@ $(document).ready(function () {
                 });
 
                 // Reverse the array if we need to prepend it.
-                if(!append) {
+                if (!append) {
                     statuses = statuses.reverse();
                 }
 
@@ -142,12 +142,12 @@ $(document).ready(function () {
     }
 
     // http://stackoverflow.com/a/25359264/2940668
-    $.urlParam = function(name){
+    $.urlParam = function (name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        if (results==null){
+        if (results == null) {
             return null;
         }
-        else{
+        else {
             return results[1] || 0;
         }
     };
@@ -156,7 +156,7 @@ $(document).ready(function () {
     var value = 'verstrooid';
 
     // Easter Egg
-    if($.urlParam(key) != null && $.urlParam(key) == value) {
+    if ($.urlParam(key) != null && $.urlParam(key) == value) {
 
         // Comix Sans MS is echt mooi.
         $('*').css({

@@ -4,7 +4,7 @@
 ini_set('display_errors', true);
 
 // Composer
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 // .env
 $dotenv = new Dotenv\Dotenv(__DIR__);
@@ -12,10 +12,10 @@ $dotenv->load();
 
 // https://apps.twitter.com/app/12972619/keys
 $settings = array(
-    'oauth_access_token'        => getenv("OAUTH_ACCESS_TOKEN"),
+    'oauth_access_token' => getenv("OAUTH_ACCESS_TOKEN"),
     'oauth_access_token_secret' => getenv("OAUTH_ACCESS_TOKEN_SECRET"),
-    'consumer_key'              => getenv("CONSUMER_KEY"),
-    'consumer_secret'           => getenv("CONSUMER_SECRET")
+    'consumer_key' => getenv("CONSUMER_KEY"),
+    'consumer_secret' => getenv("CONSUMER_SECRET"),
 );
 
 // Get the type.
@@ -24,17 +24,17 @@ $type = $_GET['type'];
 // Get the id.
 $id = $_GET['id'];
 
-if($type == "since_id") {
+if ($type == "since_id") {
     $id++;
 } else {
     $id--;
 }
 
 $fields = array(
-    'q'           => $_GET['hashtag'],
-    'count'       => 10,
+    'q' => $_GET['hashtag'],
+    'count' => 10,
     'result_type' => 'recent',
-    $_GET['type'] => $id
+    $_GET['type'] => $id,
 );
 
 // URL settings.
@@ -49,7 +49,6 @@ $twitter = new TwitterAPIExchange($settings);
 $response = $twitter
     ->setGetfield($getField)
     ->buildOauth($url, $requestMethod)
-    ->performRequest()
-;
+    ->performRequest();
 
 echo $response;
