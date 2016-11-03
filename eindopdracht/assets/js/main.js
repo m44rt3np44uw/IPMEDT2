@@ -5,13 +5,9 @@ $(document).ready(function () {
 
     // The hashtags
     var hashtags = [
-        'desuperfreekshow',
-        'desuperfreekvonkshow',
-        'superfreekshow',
-        'superfreekvonkshow',
-        'vonkshow',
-        'superfreek',
-        'freekvonk'
+        'streetlab',
+        'streetlabtv',
+        'streetlabopreis'
     ];
 
     // The hashtag.

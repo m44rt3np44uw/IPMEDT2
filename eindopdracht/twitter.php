@@ -33,7 +33,7 @@ if($type == "since_id") {
 $fields = array(
     'q'           => $_GET['hashtag'],
     'count'       => 10,
-//    'result_type' => 'recent',
+    'result_type' => 'recent',
     $_GET['type'] => $id
 );
 
