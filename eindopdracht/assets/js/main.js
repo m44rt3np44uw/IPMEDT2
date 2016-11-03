@@ -6,7 +6,10 @@ $(document).ready(function () {
     // The hashtags
     var hashtags = [
         'desuperfreekshow',
+        'desuperfreekvonkshow',
         'superfreekshow',
+        'superfreekvonkshow',
+        'vonkshow',
         'superfreek',
         'freekvonk'
     ];
@@ -139,6 +142,29 @@ $(document).ready(function () {
                 // Finish the call.
                 call_finished = true;
             }
+        });
+    }
+
+    // http://stackoverflow.com/a/25359264/2940668
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results==null){
+            return null;
+        }
+        else{
+            return results[1] || 0;
+        }
+    };
+
+    var key = 'gerrie';
+    var value = 'verstrooid';
+
+    // Easter Egg
+    if($.urlParam(key) != null && $.urlParam(key) == value) {
+
+        // Comix Sans MS is echt mooi.
+        $('*').css({
+            'font-family': 'Comic Sans MS'
         });
     }
 });
